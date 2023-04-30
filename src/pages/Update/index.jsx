@@ -47,7 +47,7 @@ const Update = () => {
   useEffect(() => {
 		const getData = async () => {
 		  const searchResponse = await axios.get(
-			 `https://geb-adt.herokuapp.com/allData/${orderId}/${productId}/${customerId}`
+			 `https://sample-backend-ljhd.onrender.com/allData/${orderId}/${productId}/${customerId}`
 		  );
 		  setSearchResult(searchResponse.data);
       console.log(searchResponse.data);
@@ -124,15 +124,15 @@ const Update = () => {
     try {
 
         //udpating the product
-        const productResponse = await axios.put("https://geb-adt.herokuapp.com/updateProduct", order);
+        const productResponse = await axios.put("https://sample-backend-ljhd.onrender.com/updateProduct", order);
         const productId = productResponse.data;
 
         //updating the customer
         console.log(customerId);
-        const customerResponse = await axios.put(`https://geb-adt.herokuapp.com/updateCustomer`, order);
+        const customerResponse = await axios.put(`https://sample-backend-ljhd.onrender.com/updateCustomer`, order);
 
         //updating the order details
-        await axios.put(`https://geb-adt.herokuapp.com/updateOrder/${productId}`, order);
+        await axios.put(`https://sample-backend-ljhd.onrender.com/updateOrder/${productId}`, order);
         navigate("/orders");
      
       } catch (error) {
