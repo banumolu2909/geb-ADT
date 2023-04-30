@@ -43,7 +43,7 @@ const Read = () => {
   useEffect(() => {
 		const getData = async () => {
 		  const searchResponse = await axios.get(
-			 `https://geb-adt.herokuapp.com/allData/${orderId}/${productId}/${customerId}`
+			 `https://sample-backend-ljhd.onrender.com/allData/${orderId}/${productId}/${customerId}`
 		  );
 		  setSearchResult(searchResponse.data);
       console.log(searchResponse.data);
