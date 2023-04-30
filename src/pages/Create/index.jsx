@@ -35,20 +35,20 @@ const Add = () => {
 
     try {
         console.log(order.product_name);
-        const response = await axios.get("https://geb-adt.herokuapp.com/createOrders", order);
+        const response = await axios.get("https://sample-backend-ljhd.onrender.com/createOrders", order);
         console.log(response.data)
         console.log("outtt")
         const orderData = response.data; // Store the returned data in a variable
 
-        const response2 = await axios.post("https://geb-adt.herokuapp.com/createOrders2", order);
+        const response2 = await axios.post("https://sample-backend-ljhd.onrender.com/createOrders2", order);
         const productId = response2.data;
         console.log(productId);
 
-        const response3 = await axios.post("https://geb-adt.herokuapp.com/createOrders3", order);
+        const response3 = await axios.post("https://sample-backend-ljhd.onrender.com/createOrders3", order);
         const customerId = response3.data;
         console.log(customerId);
 
-        await axios.post(`https://geb-adt.herokuapp.com/createOrders/${orderData}/${productId}/${customerId}`, order);
+        await axios.post(`https://sample-backend-ljhd.onrender.com/createOrders/${orderData}/${productId}/${customerId}`, order);
         navigate("/orders");
       } catch (error) {
         console.log(error);
