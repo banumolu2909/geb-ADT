@@ -94,7 +94,7 @@ const Orders = () => {
         let orderID = e.target.getAttribute('orderID');
         let customerId = e.target.getAttribute('customerId');
         let productId   =  e.target.getAttribute('productId');
-         await axios.delete(`https://geb-adt.herokuapp.com/deleteOrder/${orderID}/${customerId}/${productId}`);
+         await axios.delete(`https://sample-backend-ljhd.onrender.com/deleteOrder/${orderID}/${customerId}/${productId}`);
     //  axios.await(`http://localhost:8800/deleteOrder/${orderID}/${customerId}/${productId}`);
      window.location = "/orders";
     };        
@@ -103,7 +103,7 @@ const Orders = () => {
     useEffect(()=>{
         const fetchAllOrders = async ()=>{
             try{
-                const res = await axios.get("https://geb-adt.herokuapp.com/orders");
+                const res = await axios.get("https://sample-backend-ljhd.onrender.com/orders");
                 //console.log(res.data);
                 setOrders(res.data);
             }catch(err){
